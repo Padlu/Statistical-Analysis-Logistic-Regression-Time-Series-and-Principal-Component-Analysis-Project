@@ -4,7 +4,9 @@
 
 **Technology Used:** R
 
-### Summary of the Experiment:
+---
+
+#### Summary of the Experiment:
 
 1. The aim of the experiment was to perform forecasting on Ireland import trade in EUR(million) for 3 consecutive years of 2020, 2021, and 2022.
 2. Steps from visually understanding the time-series data, checking for various components in the series, fitting different models to the data to comparing and evaluating the models and finally forecasting using a selected models are performed in the experiment.
@@ -24,6 +26,32 @@
 * To perform checks using statistical tests for components of time-series
 * To fit, compare the time-series models on the trade data and select the model to perform forecasting.
 * To check Goodness of fit using statistical test and techniques
+
+### Data Description:
+
+Time Series Data of Ireland import trade (millions of EUR) every year from 1988-2019 (31 periods)
+
+### Plotting the Time-Series for visual interpretation:
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_plot.png "Ireland Import Trade (1988-2019)")
+
+> * The plot shows clear pattern of an upward trend => Series is not stationary
+> * Expected to have no seasonal component because of the yearly data
+> * Interpretation is that the series possess some extent of trend in it => No need to smooth it using moving averages technique
+
+### Statistical Tests to check Time-Series Components in the data:
+
+1. Trend:
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Ireland Import Trade (1988-2019)")
+
+2. Seasonality:
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Seasonal_Test.png "Ireland Import Trade (1988-2019)")
+
+3. Cycles:
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Cycle_test.png "Ireland Import Trade (1988-2019)")
+
 
 ---
 
