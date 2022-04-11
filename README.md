@@ -64,6 +64,31 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 1. These tests and methods confirms a trend and cyclical components in the time-series data
 2. Thus, Holts model, an ETS model, and an ARIMA model is selected to fit this data. Also, Näive model is selected to check how well the other sophisticated models perform in comparison.
 
+
+### Modeling the Time Series Data:
+
+Summary Points for models.
+
+ARIMA models.
+
+Tables showing Comparison.
+
+Comparison points.
+
+
+### Evaluation of Chosen ARIMA 022 Model:
+
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/lb_a022.png "Ljung-Box test of Autocorrelation")
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/AIC_RMSE_Arima.png "ACF and Residual plot of ARIMA 022")
+
+
+### Forecasting the Ireland Import Trade for 2020,21, and 22 using ARIMA 022:
+
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Forecasts_ARIMA022.png "Model Forecast with CI of 80% and 95%")
+
 ---
 
 Time-Series Analysis Experiment Project by [Abhishek Padalkar](https://github.com/Padlu).
