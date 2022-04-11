@@ -42,16 +42,27 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 ### Statistical Tests to check Time-Series Components in the data:
 
 1. Trend:
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Ireland Import Trade (1988-2019)")
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Augmented Dickey-Fuller(ADF) Test for Trend")
+
+> * Augmented Dickey-Fuller(ADF) test with significant p-value >0.05 implies that the dataset has a trend component to it.
 
 2. Seasonality:
 
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Seasonal_Test.png "Ireland Import Trade (1988-2019)")
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Seasonal_Test.png "Seasonal Decomposition in R")
+
+> * Seasonal plot function in R for decomposition confirms no seasonality component in the data.
+> * Confirms our prior expectation about this part 
 
 3. Cycles:
 
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Cycle_test.png "Ireland Import Trade (1988-2019)")
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Cycle_test.png "Hodrick-Prescott Filter Test for Cycles")
 
+> * Cyclic components can be seend by looking at any cyclic pattern with respect to the trend line.
+> * Using Hodrick-Prescott Filter, a cyclical component deviating from the trend line is seen.
+
+
+1. These tests and methods confirms a trend and cyclical components in the time-series data
+2. Thus, Holts model, an ETS model, and an ARIMA model is selected to fit this data. Also, Näive model is selected to check how well the other sophisticated models perform in comparison.
 
 ---
 
