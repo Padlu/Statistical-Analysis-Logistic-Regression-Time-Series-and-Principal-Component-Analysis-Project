@@ -35,6 +35,8 @@
 
 Time Series Data of Ireland import trade (millions of EUR) every year from 1988-2019 (31 periods)
 
+<br/>
+
 ### <ins>Plotting the Time-Series for visual interpretation</ins>:
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_plot.png "Ireland Import Trade (1988-2019)")
@@ -42,6 +44,8 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 > * The plot shows clear pattern of an upward trend => Series is not stationary
 > * Expected to have no seasonal component because of the yearly data
 > * Interpretation is that the series possess some extent of trend in it => No need to smooth it using moving averages technique
+
+<br/>
 
 ### <ins>Statistical Tests to check Time-Series Components in the data</ins>:
 
@@ -64,10 +68,12 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 > * Cyclic components can be seend by looking at any cyclic pattern with respect to the trend line.
 > * Using Hodrick-Prescott Filter, a cyclical component deviating from the trend line is seen.
 
+<br/>
 
-1. These tests and methods confirms a trend and cyclical components in the time-series data
-2. Thus, Holts model, an ETS model, and an ARIMA model is selected to fit this data. Also, Näive model is selected to check how well the other sophisticated models perform in comparison.
+-> These tests and methods confirms a trend and cyclical components in the time-series data <br/>
+-> Thus, Holts model, an ETS model, and an ARIMA model is selected to fit this data. Also, Näive model is selected to check how well the other sophisticated models perform in comparison.
 
+<br/>
 
 ### <ins>Modeling the Time Series Data</ins>:
 
@@ -77,8 +83,15 @@ ARIMA models.
 
 Tables showing Comparison.
 
+| `Models` | Näive | Holts | ETS | ARIMA 022 |
+|:--------:|:-----:|:-----:|:-----:|:-----:|
+| `Metrics` | | | | |
+| **AICc** | - | 662.50 | 648.97 | 597.26 |
+| **RMSE** | 5257.606 | 4566.371 | 4574.832 | 4182.855 |
+
 Comparison points.
 
+<br/>
 
 ### <ins>Evaluation of Chosen ARIMA 022 Model</ins>:
 
@@ -87,6 +100,7 @@ Comparison points.
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/AIC_RMSE_Arima.png "ACF and Residual plot of ARIMA 022")
 
+<br/>
 
 ### <ins>Forecasting the Ireland Import Trade for 2020,21, and 22 using ARIMA 022</ins>:
 
