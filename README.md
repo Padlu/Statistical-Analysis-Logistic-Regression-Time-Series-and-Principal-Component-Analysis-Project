@@ -4,6 +4,8 @@
 
 **Technology Used:** R
 
+**Skills Used:** --
+
 ---
 
 #### Summary of the Experiment:
@@ -20,18 +22,20 @@
 
 ---
 
-**Objectives:**
+**Objectives of the Project:**
 * To fit a time-series model to perform forecast for Ireland import trade for years 2020, 2021, and 2022.
 * To vizualize the time-series data for basic understanding
 * To perform checks using statistical tests for components of time-series
 * To fit, compare the time-series models on the trade data and select the model to perform forecasting.
 * To check Goodness of fit using statistical test and techniques
 
-### Data Description:
+---
+
+### <ins>Data Description</ins>:
 
 Time Series Data of Ireland import trade (millions of EUR) every year from 1988-2019 (31 periods)
 
-### Plotting the Time-Series for visual interpretation:
+### <ins>Plotting the Time-Series for visual interpretation</ins>:
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_plot.png "Ireland Import Trade (1988-2019)")
 
@@ -39,7 +43,7 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 > * Expected to have no seasonal component because of the yearly data
 > * Interpretation is that the series possess some extent of trend in it => No need to smooth it using moving averages technique
 
-### Statistical Tests to check Time-Series Components in the data:
+### <ins>Statistical Tests to check Time-Series Components in the data</ins>:
 
 1. Trend:
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Augmented Dickey-Fuller(ADF) Test for Trend")
@@ -65,7 +69,7 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 2. Thus, Holts model, an ETS model, and an ARIMA model is selected to fit this data. Also, Näive model is selected to check how well the other sophisticated models perform in comparison.
 
 
-### Modeling the Time Series Data:
+### <ins>Modeling the Time Series Data</ins>:
 
 Summary Points for models.
 
@@ -76,7 +80,7 @@ Tables showing Comparison.
 Comparison points.
 
 
-### Evaluation of Chosen ARIMA 022 Model:
+### <ins>Evaluation of Chosen ARIMA 022 Model</ins>:
 
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/lb_a022.png "Ljung-Box test of Autocorrelation")
@@ -84,7 +88,7 @@ Comparison points.
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/AIC_RMSE_Arima.png "ACF and Residual plot of ARIMA 022")
 
 
-### Forecasting the Ireland Import Trade for 2020,21, and 22 using ARIMA 022:
+### <ins>Forecasting the Ireland Import Trade for 2020,21, and 22 using ARIMA 022</ins>:
 
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Forecasts_ARIMA022.png "Model Forecast with CI of 80% and 95%")
