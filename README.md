@@ -77,9 +77,25 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 
 ### <ins>Modeling the Time Series Data</ins>:
 
-Summary Points for models.
+Following 4 models were fitted to the time-series data to then compare and select a model for forecasting.
 
-ARIMA models.
+#### A. NÄIVE Model:
+
+* Simplistic model -> Resulted in RMSE score of 5257.606
+
+#### B. HOLTS Model:
+
+* Little complicated model -> Resulted in RMSE score of 4566.371
+
+#### C. ETS Model:
+
+* More complicated model -> Resulted in RMSE score of 4574.832
+
+#### D. ARIMA Model:
+
+* Complex model of all -> Resulted in RMSE score of 4182.855
+
+##### &emsp; I.  
 
 Tables showing Comparison.
 
