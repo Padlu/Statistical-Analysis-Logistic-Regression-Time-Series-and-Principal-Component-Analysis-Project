@@ -77,7 +77,7 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 
 ### <ins>Modeling the Time Series Data</ins>:
 
-Following 4 models were fitted to the time-series data to then compare and select a model for forecasting.
+Following 4 models were fitted to the time-series data to then compare and select a model for forecasting. <br/> The models were evaluated based on their RMSE and AICc scores. <ins>Less the scores better the model.</ins>
 
 #### A. NÄIVE Model:
 
@@ -85,19 +85,39 @@ Following 4 models were fitted to the time-series data to then compare and selec
 
 #### B. HOLTS Model:
 
-* Little complicated model -> Resulted in RMSE score of 4566.371
+* Little complicated model -> Resulted in RMSE score of 4566.371 and AICc score of 662.50.
+> `!! TECHNICAL NERD PART !!`
+> * Is a type of exponential smoothening(ES) model. -> Assigns exponentially diminishing weights(alpha) on the previous observations such that the total weight = 1.
+> * Takes a value of Alpha for period between previous and current time period, and then assigns diminishing weights to rest of each periods accordingly.
+> * Alpha selected needs to be so that correct amount of weightage is given to the recent observation.
+> * Another weight(beta) takes trend into account. Thus, it's necessary to select best value for beta as well.
+> * Selecting best weight values of Alpha and Beta results in better fitting model.
 
 #### C. ETS Model:
 
-* More complicated model -> Resulted in RMSE score of 4574.832
+* More complicated model -> Resulted in RMSE score of 4574.832 and AICc score of 648.97.
+> * This model fits the time-series based on Errors, Trend and Seasonality.
+> * Seasonality is an additional factor this models also take into account.
+> * Each of them can be additive or multiplicative in nature to create the fluctuations in time-series.
 
 #### D. ARIMA Model:
 
-* Complex model of all -> Resulted in RMSE score of 4182.855
+* Complex/Hybrid model of all -> Resulted in RMSE score of 4182.855 and AICc score of 597.26.
+> * Takes Autoregressive, Moving Averages and differencing terms into account in process of fitting a time-series model.
+> * Autoregressive (AR) elements -> certain weights assigned to each lag (previous period)
+>   *  Different compared to an ES model as ARIMA doesn't all previous periods from the start but a few periods back to the current period and assign weights in order to best fit the model on the data.
+>   * Termed as p
+> * Moving Averages (MA) elements -> error terms for previous period forecasts takes into account for any recent shock in the series for better forecast prediction.
+>   * Termed as q
+> * ARIMA models can only be fit if the time-series is stationary in nature. Thus, sometimes differencing (d) is also need to be done for a given time-series.
 
-##### &emsp; I.  
+* We perform 2 differencing as after 1 differencing ADF test still resulted with significant p-value. We thus build 6 ARIMA models for differencing = 1 and 2.
+    * For each difference, difference plot was checked and confirmed with no significant spike lags.
 
-Tables showing Comparison.
+
+
+##### &emsp; I. Tabular Comparison of Models
+
 
 | `Models` | Näive | Holts | ETS | ARIMA 022 |
 |:--------:|:-----:|:-----:|:-----:|:-----:|
@@ -105,23 +125,38 @@ Tables showing Comparison.
 | **AICc** | - | 662.50 | 648.97 | 597.26 |
 | **RMSE** | 5257.606 | 4566.371 | 4574.832 | 4182.855 |
 
-Comparison points.
+As seen above, the more sophisticated models performed a lot better than simple Näive model. <br/>
+Also, ARIMA 022 fits the data best -> Select for final forecast.
 
 <br/>
 
 ### <ins>Evaluation of Chosen ARIMA 022 Model</ins>:
 
+> For Time-Series to be generalized, we perform 2 criteria checks on the residual erros of the model.
+> <br/>1. Residual errors must be normally distributed at mean around 0 with constant standard deviation.
+> 2. No autocorrelations between the residual errors of each lag.
+> Time-series models that pass these tests -> Appropriate time-series models good to use.
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/lb_a022.png "Ljung-Box test of Autocorrelation")
 
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/AIC_RMSE_Arima.png "ACF and Residual plot of ARIMA 022")
+* For Autocorrelation between residual lags -> Ljung-Box test -> Not significant as shown in fig above -> No autocorrelations -> Passed test 1!
+
+![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Res_ARIMA022.png "ACF and Residual plot of ARIMA 022")
+
+* For Residual distribution -> Fig above with residual plot shows reasonable normal distribution at mean = 0 with constant standard deviation -> Passed test 2!
+* Note: ACF plot shows a spike at lag 9 -> some chance that this model might have missed some patterns. Being cognizant of this fact we select this model for our forecast.
+
+
+
+
 
 <br/>
 
 ### <ins>Forecasting the Ireland Import Trade for 2020,21, and 22 using ARIMA 022</ins>:
 
-
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Forecasts_ARIMA022.png "Model Forecast with CI of 80% and 95%")
+
+Above figure shows the 3 forecasts made for year **2020, 2021, and 2022** for the Ireland import trade which came out to be **89986.7, 92401.38, and 94816.07 EUR in millions with 80% and 95% Confidence interval.**
 
 ---
 
