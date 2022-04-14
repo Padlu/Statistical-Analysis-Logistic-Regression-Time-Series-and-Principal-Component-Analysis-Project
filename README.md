@@ -1,6 +1,6 @@
 # Statistical Time Series Analysis for Irish import trade Data and Forecasting
 
-**Experience Level:** Intermediate - Advance
+**Experience Level:** Intermediate
 
 **Technology Used:** R
 
@@ -24,7 +24,7 @@
 
 **Objectives of the Project:**
 * To fit a time-series model to perform forecast for Ireland import trade for years 2020, 2021, and 2022.
-* To vizualize the time-series data for basic understanding
+* To explore and vizualize the time-series data for basic understanding
 * To perform checks using statistical tests for components of time-series
 * To fit, compare the time-series models on the trade data and select the model to perform forecasting.
 * To check Goodness of fit using statistical test and techniques
@@ -33,7 +33,8 @@
 
 ### <ins>Data Description</ins>:
 
-Time Series Data of Ireland import trade (millions of EUR) every year from 1988-2019 (31 periods)
+Time Series Data of Ireland import trade (millions of EUR) every year from 1988-2019 (31 periods) <br/>
+The data has no outliers, missing values and is complete to perform the analysis.
 
 <br/>
 
@@ -50,13 +51,22 @@ Time Series Data of Ireland import trade (millions of EUR) every year from 1988-
 ### <ins>Statistical Tests to check Time-Series Components in the data</ins>:
 
 1. Trend:
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Augmented Dickey-Fuller(ADF) Test for Trend")
+
+<p align="center">
+<img src="Images/TS_Trend_test.png" width=600 title="Augmented Dickey-Fuller(ADF) Test for Trend"> 
+</p>
+
+<!-- ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Trend_test.png "Augmented Dickey-Fuller(ADF) Test for Trend") -->
 
 > * Augmented Dickey-Fuller(ADF) test with significant p-value >0.05 implies that the dataset has a trend component to it.
 
 2. Seasonality:
 
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Seasonal_Test.png "Seasonal Decomposition in R")
+<p align="center">
+<img src="Images/TS_Seasonal_Test.png" width=600 title="Seasonal Decomposition in R"> 
+</p>
+
+<!-- ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/TS_Seasonal_Test.png "Seasonal Decomposition in R") -->
 
 > * Seasonal plot function in R for decomposition confirms no seasonality component in the data.
 > * Confirms our prior expectation about this part 
@@ -134,16 +144,20 @@ Also, ARIMA 022 fits the data best -> Select for final forecast.
 
 > For Time-Series to be generalized, we perform 2 criteria checks on the residual erros of the model.
 > <br/>1. Residual errors must be normally distributed at mean around 0 with constant standard deviation.
-> 2. No autocorrelations between the residual errors of each lag.
-> Time-series models that pass these tests -> Appropriate time-series models good to use.
+> <br/>2. No autocorrelations between the residual errors of each lag.
+> <br/>Time-series models that pass these tests -> Appropriate time-series models good to use.
 
-![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/lb_a022.png "Ljung-Box test of Autocorrelation")
+<p align="center">
+<img src="Images/lb_a022.png" width=400 title="Ljung-Box test of Autocorrelation"> 
+</p>
 
-* For Autocorrelation between residual lags -> Ljung-Box test -> Not significant as shown in fig above -> No autocorrelations -> Passed test 1!
+<!-- ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/lb_a022.png "Ljung-Box test of Autocorrelation") -->
+
+* For Autocorrelation between residual lags -> Ljung-Box test -> Not significant as shown in fig above -> No autocorrelations <br/>-> <ins> Passed test 1! </ins>
 
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Res_ARIMA022.png "ACF and Residual plot of ARIMA 022")
 
-* For Residual distribution -> Fig above with residual plot shows reasonable normal distribution at mean = 0 with constant standard deviation -> Passed test 2!
+* For Residual distribution -> Fig above with residual plot shows reasonable normal distribution at mean = 0 with constant standard deviation -> <ins> Passed test 2! </ins>
 * Note: ACF plot shows a spike at lag 9 -> some chance that this model might have missed some patterns. Being cognizant of this fact we select this model for our forecast.
 
 
@@ -157,6 +171,7 @@ Also, ARIMA 022 fits the data best -> Select for final forecast.
 ![alt text](https://github.com/Padlu/Statistical-Analysis-Logistic-Regression-Time-Series-and-Principal-Component-Analysis-Project/blob/main/Images/Forecasts_ARIMA022.png "Model Forecast with CI of 80% and 95%")
 
 Above figure shows the 3 forecasts made for year **2020, 2021, and 2022** for the Ireland import trade which came out to be **89986.7, 92401.38, and 94816.07 EUR in millions with 80% and 95% Confidence interval.**
+
 
 ---
 
