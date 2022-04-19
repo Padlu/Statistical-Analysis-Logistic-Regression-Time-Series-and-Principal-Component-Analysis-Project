@@ -4,7 +4,7 @@
 
 **Technology Used:** R
 
-**Skills Used:** --
+**Skills Used:** Visualing Time Series, testing for Time-series components (<ins>Augmented Dickey-Fuller(ADF) test, Seasonal Decomposition test, Hodrick-Prescott Filter</ins>), fitting models to the time-series data, Comparison of models using <ins>AICc and RMSE</ins> scores, Evaluation using <ins>Ljung-Box test of Autocorrelation, and ACF/Residual plot</ins>, <ins>Forecasting</ins> 3 time periods ahead.
 
 ---
 
